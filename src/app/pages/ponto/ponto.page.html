@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Controle de Ponto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" color="success" (click)="registrar('entrada')">
+    Registrar Entrada
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="registrar('saida')">
+    Registrar Saída
+  </ion-button>
+
+  <ion-list *ngIf="pontos.length > 0">
+    <ion-item *ngFor="let ponto of pontos">
+      <ion-label>
+        <h3>{{ ponto.tipo | titlecase }}</h3>
+        <p>{{ ponto.horario | date:'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text color="medium" *ngIf="pontos.length === 0">
+    <p class="ion-text-center ion-padding-top">Nenhum ponto registrado ainda.</p>
+  </ion-text>
+</ion-content>

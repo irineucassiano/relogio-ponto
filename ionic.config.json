@@ -1,0 +1,7 @@
+{
+  "name": "frontend-ponto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
